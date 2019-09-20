@@ -7,6 +7,7 @@ namespace :greeting do
   task :hola do
     puts "hola de Rake!"
   end
+end
 
 
 task :console => :environment do
@@ -25,3 +26,4 @@ namespace :db do
   task :seed do
     require_relative './lib/seed.rb'
   end
+end
