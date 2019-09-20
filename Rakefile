@@ -25,3 +25,4 @@ namespace :db
   task :seed do
     require_relative './lib/seed.rb'
   end
+end
