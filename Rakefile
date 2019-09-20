@@ -1,4 +1,23 @@
 desc 'outputs hello to the terminal'
-task :hello do
-  puts "hello from Rake!"
+namespace :greeting
+  task :hello do
+    puts "hello from Rake!"
+  end
+
+  task :hola do
+    puts "hola de Rake!"
+  end
 end
+
+task :console => :environment do
+  Pry.start
+end
+
+task :environment do
+  require_relative './config/environment.rb'
+end
+
+namespace :db
+  task :migrate => :environment do
+    Student.create_table
+  end
